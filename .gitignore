@@ -1,0 +1,8 @@
+# Ignorar un archivo específico
+archivo.txt
+
+# Ignorar una carpeta completa
+/Library/target/
+
+# Ignorar todos los archivos con una extensión específica
+*.log
