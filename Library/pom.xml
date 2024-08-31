@@ -9,6 +9,12 @@
   <url>http://maven.apache.org</url>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/junit/junit -->
+
+  <properties>
+    <maven.compiler.target>1.17</maven.compiler.target>
+    <maven.compiler.source>1.17</maven.compiler.source>
+  </properties>
+
   <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
