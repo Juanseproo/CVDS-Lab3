@@ -1,8 +1,47 @@
-# Ignorar un archivo específico
-archivo.txt
-
-# Ignorar una carpeta completa
+# Maven target directory
 /Library/target/
 
-# Ignorar todos los archivos con una extensión específica
+# Maven wrapper files
+.mvn/
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# NetBeans project files
+nbproject/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
 *.log
+
+# Build files
+*.jar
+*.war
+*.ear
+
+# IDE-specific files
+*.swp
+*.swo
+
+# Package distribution files
+*.tar.gz
+*.zip
+
+# Java class files
+*.class
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+
