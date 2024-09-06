@@ -85,12 +85,24 @@ Es necesario crear la clase de prueba para edu.eci.cvds.tdd.Library, la clase de
 Para pensar en los casos de pruebas lean detenidamente el javadoc de los métodos para reconocer las clases de equivalencia, basados en las clases de equivalencia se debe crear una prueba la cual debe fallar y posteriormente implementar el código necesario para que funcione, este proceso se debe repetir hasta cumplir con la especificación definida en el javadoc.
 
 
+Para el método addBook:
 
+Se importaron las librerias necesarias
+![alt text](img2/image.png)
 
+Se instanció los recursos que se necesitan para las pruebas
+![alt text](img2/image-1.png)
 
+Y finalmente se hicieron las pruebas
+![alt text](img2/image-2.png)
 
+![alt text](img2/image-3.png)
 
-## (Agregar Capturas de Clase Prueba para seguir)
+Se aseguró que las pruebas fallarán
+
+![alt text](image.png)
+
+Se subió a github en otra rama para luego hacer merge
 
 
 

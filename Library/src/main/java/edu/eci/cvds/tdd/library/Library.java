@@ -75,4 +75,11 @@ public class Library {
         return users.add(user);
     }
 
+    /*
+     * Devuelve la cantidad de libros que se tienen en la biblioteca
+     */
+    public Map<Book, Integer> getBooks() {
+        return books;
+    }
+    
 }
