@@ -1,0 +1,35 @@
+[33mcommit 9d59d598364ff40b29a92b4f67c77b632dc00049[m[33m ([m[1;31morigin/feature/addBookTest[m[33m, [m[1;32mfeature/addBookTest[m[33m)[m
+Author: JuanMedina <juan.medina-r@mail.escuelaing.edu.co>
+Date:   Sat Aug 31 13:09:04 2024 -0500
+
+    AddBookTest incompleto
+
+[33mcommit 8c49415738fee2b77cc4ce5b67d8713c2ab42775[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Juan <buitragojuans@hotmail.com>
+Date:   Sat Aug 31 12:33:17 2024 -0500
+
+    Readme Actualizado y Build en pom para correr el codigo App con mvn
+
+[33mcommit 00b67826ce5de05c92c738b7c832a36a1076294c[m
+Author: Juan <buitragojuans@hotmail.com>
+Date:   Sat Aug 31 12:32:17 2024 -0500
+
+    Readme Actualizado y Build en pom para correr el codigo App con mvn
+
+[33mcommit ece96ab236a5915755b937ac46673e2696d88092[m
+Author: JuanMedina <juan.medina-r@mail.escuelaing.edu.co>
+Date:   Sat Aug 31 11:47:42 2024 -0500
+
+    Correccion POM
+
+[33mcommit 05bc7fd2799cd2bbbd55c6623ab16f30b65f2aca[m
+Author: Juan <buitragojuans@hotmail.com>
+Date:   Sat Aug 31 11:07:06 2024 -0500
+
+    Adicion Dependencias
+
+[33mcommit 8c70cd7cea8d5cc91646289ddd5f265dc79cf37b[m
+Author: Juan <buitragojuans@hotmail.com>
+Date:   Sat Aug 31 11:02:48 2024 -0500
+
+    Creación Scaffolding
