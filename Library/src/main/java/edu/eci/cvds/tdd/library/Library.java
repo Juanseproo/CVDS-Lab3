@@ -75,4 +75,7 @@ public class Library {
         return users.add(user);
     }
 
+    public Map<Book, Integer> getBooks(){
+        return books;
+    }
 }
