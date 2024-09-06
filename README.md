@@ -1,5 +1,5 @@
 # LABORATORIO 3 - TDD
-#### TALLER 3
+#### TALLER 3.
 #### Testing - TDD
 
 ### PRE-RREQUISITOS
