@@ -94,5 +94,12 @@ public class Library {
     public Map<Book, Integer> getBooks() {
         return books;
     }
-// Para Merge
+
+    /*
+     * Para merge
+     */
+    public Map<Book, Integer> gotBooks() {
+        return books;
+    }
+
 }
