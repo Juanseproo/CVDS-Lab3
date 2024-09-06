@@ -114,8 +114,11 @@ Se comprobó que funcionaban las pruebas
 
 ![alt text](image-3.png)
 
-Se subió a github en la rama feature/addBookTest y se hizo merge con main
+Se subió a github en la rama feature/addBookTest
 
+![alt text](image-5.png)
+
+Luego, se creó una rama Release para luego esta sea mergeada con la rama main
 
 
 
