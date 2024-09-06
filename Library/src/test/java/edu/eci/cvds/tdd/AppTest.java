@@ -28,7 +28,7 @@ public class AppTest extends TestCase
      * Añade libro null
      */
     public void testAddNullBook() {
-        assertTrue(library.addBook(null));
+        assertFalse(library.addBook(null));
     }
 
     /*

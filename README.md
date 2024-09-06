@@ -102,8 +102,19 @@ Se aseguró que las pruebas fallarán
 
 ![alt text](image.png)
 
-Se subió a github en otra rama para luego hacer merge
+Se subió a git en la rama feature/addBookTest lo que se lleva 
 
+![alt text](image-1.png)
+
+Luego por medio de TDD, se hizo la clase addBook
+
+![alt text](image-2.png)
+
+Se comprobó que funcionaban las pruebas
+
+![alt text](image-3.png)
+
+Se subió a github en la rama feature/addBookTest y se hizo merge con main
 
 
 
@@ -164,6 +175,7 @@ Para usar Jacoco es necesario agregar la siguiente sección en el pom.xml
     </plugins>
   </build>
 ```
+![alt text](image-4.png)
 
 Ahora al compilar el proyecto en la carpeta target se debe crear una carpeta con el nombre site la cual tiene un index.html, al abrir dicho archivo se debe ver la cobertura total y de cada una de las clases, el objetivo es tener la cobertura superior al 80%.
 

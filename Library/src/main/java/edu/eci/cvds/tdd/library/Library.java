@@ -35,8 +35,21 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        //TODO Implement the logic to add a new book into the map.
-        return false;
+        if (book == null) {
+            return false;
+        }
+        
+        // Buscar si ya existe un libro con el mismo ISBN
+        for (Book b : books.keySet()) {
+            if (b.getIsbn().equals(book.getIsbn())) {
+                books.put(b, books.get(b) + 1); // Incrementar la cantidad para el libro existente
+                return true;
+            }
+        }
+        
+        // Si no se encontró un libro con el mismo ISBN, añadirlo
+        books.put(book, 1);
+        return true;
     }
 
     /**
