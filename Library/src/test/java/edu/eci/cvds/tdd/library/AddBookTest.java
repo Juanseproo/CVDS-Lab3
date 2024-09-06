@@ -6,7 +6,7 @@ import edu.eci.cvds.tdd.library.book.Book;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import java.util.HashMap;
+import java.util.*;
 
 
 public class AddBookTest {
