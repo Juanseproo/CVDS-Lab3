@@ -185,7 +185,7 @@ Para usar Jacoco es necesario agregar la siguiente sección en el pom.xml
 ```
 ![alt text](img3/image-4.png)
 
-Ahora al compilar el proyecto en la carpeta target se debe crear una carpeta con el nombre site la cual tiene un index.html, al abrir dicho archivo se debe ver la cobertura total y de cada una de las clases, el objetivo es tener la cobertura superior al 80%.
+Ahora al compilar el proyecto en la carpeta target se debe crear una carpeta con el nombre site la cual tiene un index.html, al abrir dicho archivo se debe ver la cobertura total y de cada una de las clases, el objetivo es tener la cobertura superior al 80%..
 
 Explore los links del reporte en el cual le muestra que partes del código tienen prueba y cuales no.
 
