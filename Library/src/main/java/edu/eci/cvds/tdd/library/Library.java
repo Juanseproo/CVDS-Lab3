@@ -94,3 +94,5 @@ public class Library {
     public Map<Book, Integer> getBooks() {
         return books;
     }
+
+}

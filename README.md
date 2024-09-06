@@ -203,3 +203,4 @@ Ahora es necesario hacer el análisis estático del código usando SonarQube, pa
 * Añada el plugin de Sonar en el archivo pom del proyecto.
 
 
+![alt text](image-1.png)
