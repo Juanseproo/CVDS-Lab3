@@ -88,12 +88,15 @@ Para pensar en los casos de pruebas lean detenidamente el javadoc de los método
 Para el método addBook:
 
 Se importaron las librerias necesarias
+
 ![alt text](img2/image.png)
 
 Se instanció los recursos que se necesitan para las pruebas
+
 ![alt text](img2/image-1.png)
 
 Y finalmente se hicieron las pruebas
+
 ![alt text](img2/image-2.png)
 
 ![alt text](img2/image-3.png)
@@ -118,7 +121,12 @@ Se subió a github en la rama feature/addBookTest
 
 ![alt text](image-5.png)
 
-Luego, se creó una rama Release para luego esta sea mergeada con la rama main
+Luego, se creó una rama Release y se subió todo lo que tiene feature/addBookTest 
+
+![alt text](image-6.png)
+
+Por último se hizo merge entre release y main
+
 
 
 
