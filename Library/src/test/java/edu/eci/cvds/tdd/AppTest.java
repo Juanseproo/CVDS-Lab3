@@ -2,12 +2,14 @@ package edu.eci.cvds.tdd;
 
 import edu.eci.cvds.tdd.library.Library;
 import edu.eci.cvds.tdd.library.book.Book;
+import edu.eci.cvds.tdd.library.loan.Loan;
+import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
-/**
+/*
  * Unit test for App.
  */
 public class AppTest {
@@ -82,6 +84,65 @@ public class AppTest {
 
         // Verificar que la cantidad se haya incrementado a 2
         assertEquals(Integer.valueOf(2), library.getBooks().get(existingBook));
+    }
+
+    /*
+     * Probar crear un préstamo exitoso.
+     * Verificar que el préstamo se ha creado, el estado es ACTIVE y el libro está en préstamo.
+     * Verificar que después del prestamo, no queda el libro disponible.
+     */
+    @Test
+    public void testLoanABookSuccessfully() {
+        //Crear un libro y añadirlo a la Libreria
+        Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
+        library.addBook(book);
+
+        //Pedir un libro
+        Loan loan = library.loanABook("Test User", "9780134685991");
+
+        assertNotNull(loan);
+        assertEquals(loan.getStatus(), LoanStatus.ACTIVE);
+        assertEquals(library.getBooks().get(book).intValue(), 0);
+    }
+
+    /*
+     * Probar no permitir préstamo si el usuario no existe.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testLoanABookUserDoesNotExist() {
+        //Crear un libro y añadirlo a la Libreria
+        Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
+        library.addBook(book);
+
+        //Pedir un libro
+        library.loanABook("nonexistentUser", "9780134685991");
+
+    }
+
+    /*
+     * Probar no permitir préstamo si el libro no está disponible.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testLoanABookNotAvailable() {
+        //Crear un libro y añadirlo a la Libreria
+        Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
+        library.addBook(book);
+
+        //Pedir un libro
+        library.loanABook("Test User", "invalidISBN");
+    }
+
+    /*
+     * Prueba no permitir que un usuario tenga más de un préstamo activo para el mismo libro.
+     */
+    @Test(expected = IllegalStateException.class)
+    public void testLoanABookAlreadyLoaned() {
+        //Crear un libro y añadirlo a la Libreria
+        Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
+        library.addBook(book);
+
+        library.loanABook("Test User", "9780134685991");
+        library.loanABook("Test User", "9780134685991");
     }
 
 }

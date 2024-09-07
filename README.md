@@ -85,7 +85,7 @@ Es necesario crear la clase de prueba para edu.eci.cvds.tdd.Library, la clase de
 Para pensar en los casos de pruebas lean detenidamente el javadoc de los métodos para reconocer las clases de equivalencia, basados en las clases de equivalencia se debe crear una prueba la cual debe fallar y posteriormente implementar el código necesario para que funcione, este proceso se debe repetir hasta cumplir con la especificación definida en el javadoc.
 
 
-Para el método addBook:
+### Implementación y Pruebas addBook
 
 Se importaron las librerias necesarias
 
@@ -128,6 +128,12 @@ Luego, se creó una rama Release y se subió todo lo que tiene feature/addBookTe
 Por último se hizo merge entre release y main
 
 ![alt text](img/image-15.png)
+
+### Implementación y Pruebas loanABook 
+
+Se realizaron las pruebas pertinentes 
+
+![alt text](image.png)
 
 ### COBERTURA (Jacoco)
 Agregar la dependencia de jacoco, utilizar la última versión disponible en maven central.
