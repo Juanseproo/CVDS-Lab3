@@ -2,12 +2,11 @@ package edu.eci.cvds.tdd.library;
 
 import edu.eci.cvds.tdd.library.book.Book;
 import edu.eci.cvds.tdd.library.loan.Loan;
+import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDateTime;
+import java.util.*;
 
 /**
  * Library responsible for manage the loans and the users.
@@ -66,8 +65,59 @@ public class Library {
      * @return The new created loan.
      */
     public Loan loanABook(String userId, String isbn) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-        return null;
+        // Verificar usuario existente
+        User user = null;
+        for (User u : users) {
+            if (u.getId().equals(userId)) {
+                user = u;
+                break;
+            }
+        }
+
+        if (user == null) {
+            throw new IllegalArgumentException("User does not exist.");
+        }
+
+        // Verificar libro existente y disponible
+        Book bookToLoan = null;
+        for (Book book : books.keySet()) {
+            if (book.getIsbn().equals(isbn)) {
+                bookToLoan = book;
+                break;
+            }
+        }
+
+        if (bookToLoan == null) {
+            throw new IllegalArgumentException("Book does not exist.");
+        }
+
+        // Verificar copias disponibles del libro
+        int availableCopies = books.get(bookToLoan);
+        if (availableCopies <= 0) {
+            throw new IllegalArgumentException("No copies available.");
+        }
+
+        // Verificar si el usuario ya tiene un préstamo activo para el mismo libro
+        for (Loan loan : loans) {
+            if (loan.getUser().equals(user) && loan.getBook().equals(bookToLoan) && loan.getStatus() == LoanStatus.ACTIVE) {
+                throw new IllegalStateException("User already has an active loan for this book.");
+            }
+        }
+
+        // Crear el préstamo
+        Loan newLoan = new Loan();
+        newLoan.setUser(user);
+        newLoan.setBook(bookToLoan);
+        newLoan.setLoanDate(LocalDateTime.now());
+        newLoan.setStatus(LoanStatus.ACTIVE);
+
+        // Disminuir copias disponibles
+        books.put(bookToLoan, availableCopies - 1);
+
+        // Agregar el préstamo a la lista de préstamos
+        loans.add(newLoan);
+
+        return newLoan;
     }
 
     /**

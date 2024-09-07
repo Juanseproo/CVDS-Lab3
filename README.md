@@ -85,49 +85,59 @@ Es necesario crear la clase de prueba para edu.eci.cvds.tdd.Library, la clase de
 Para pensar en los casos de pruebas lean detenidamente el javadoc de los métodos para reconocer las clases de equivalencia, basados en las clases de equivalencia se debe crear una prueba la cual debe fallar y posteriormente implementar el código necesario para que funcione, este proceso se debe repetir hasta cumplir con la especificación definida en el javadoc.
 
 
-Para el método addBook:
+### Implementación y Pruebas addBook
 
 Se importaron las librerias necesarias
 
-![alt text](img2/image.png)
+![alt text](img/image-5.png)
 
 Se instanció los recursos que se necesitan para las pruebas
 
-![alt text](img2/image-1.png)
+![alt text](img/image-6.png)
 
 Y finalmente se hicieron las pruebas
 
-![alt text](img2/image-2.png)
+![alt text](img/image-7.png)
 
-![alt text](img2/image-3.png)
+![alt text](img/image-8.png)
 
 Se aseguró que las pruebas fallarán
 
-![alt text](img3/image.png)
+![alt text](img/image-9.png)
 
 Se subió a git en la rama feature/addBookTest lo que se lleva 
 
-![alt text](img3/image-1.png)
+![alt text](img/image-10.png)
 
 Luego por medio de TDD, se hizo la clase addBook
 
-![alt text](img3/image-2.png)
+![alt text](img/image-11.png)
 
 Se comprobó que funcionaban las pruebas
 
-![alt text](img3/image-3.png)
+![alt text](img/image-12.png)
 
 Se subió a github en la rama feature/addBookTest
 
-![alt text](img3/image-5.png)
+![alt text](img/image-13.png)
 
 Luego, se creó una rama Release y se subió todo lo que tiene feature/addBookTest 
 
-![alt text](img3/image-6.png)
+![alt text](img/image-14.png)
 
 Por último se hizo merge entre release y main
 
-![alt text](image.png)
+![alt text](img/image-15.png)
+
+### Implementación y Pruebas loanABook 
+
+Se realizaron las pruebas pertinentes 
+
+![alt text](img/image-18.png)
+
+Se implementó el método adecuadamente para que las pruebas pasaran
+
+![alt text](img/image-17.png)
 
 ### COBERTURA (Jacoco)
 Agregar la dependencia de jacoco, utilizar la última versión disponible en maven central.
@@ -183,7 +193,7 @@ Para usar Jacoco es necesario agregar la siguiente sección en el pom.xml
     </plugins>
   </build>
 ```
-![alt text](img3/image-4.png)
+![alt text](img/image-16.png)
 
 Ahora al compilar el proyecto en la carpeta target se debe crear una carpeta con el nombre site la cual tiene un index.html, al abrir dicho archivo se debe ver la cobertura total y de cada una de las clases, el objetivo es tener la cobertura superior al 80%..
 
@@ -201,6 +211,3 @@ Ahora es necesario hacer el análisis estático del código usando SonarQube, pa
 * Una vez sonar este corriendo deben generar un token
 * Instale sonarLint en el IDE que este manejando.
 * Añada el plugin de Sonar en el archivo pom del proyecto.
-
-
-![alt text](image-1.png)
