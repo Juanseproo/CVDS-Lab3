@@ -98,7 +98,7 @@ public class AppTest {
         library.addBook(book);
 
         //Pedir un libro
-        Loan loan = library.loanABook("Test User", "9780134685991");
+        Loan loan = library.loanABook("test123", "9780134685991");
 
         assertNotNull(loan);
         assertEquals(loan.getStatus(), LoanStatus.ACTIVE);
@@ -124,12 +124,27 @@ public class AppTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testLoanABookNotAvailable() {
-        //Crear un libro y añadirlo a la Libreria
+        //Pedir un libro
+        library.loanABook("test123", "invalidISBN");
+    }
+
+    /*
+     * Prueba no permitir que se preste un libro si no hay existencias
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testLoanABookWithNoMoreCopies() {
+        // Crear otro usuario para la prueba
+        User testUser = new User();
+        testUser.setId("test1234");
+        testUser.setName("Test User2");
+        library.addUser(testUser);
+
+        // Crear un libro y añadirlo a la Libreria
         Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
         library.addBook(book);
 
-        //Pedir un libro
-        library.loanABook("Test User", "invalidISBN");
+        library.loanABook("test123", "9780134685991");
+        library.loanABook("test1234", "9780134685991");
     }
 
     /*
@@ -137,12 +152,13 @@ public class AppTest {
      */
     @Test(expected = IllegalStateException.class)
     public void testLoanABookAlreadyLoaned() {
-        //Crear un libro y añadirlo a la Libreria
+        // Crear un libro y añadirlo a la Libreria
         Book book = new Book("Effective Java", "Juan Buitrago", "9780134685991");
         library.addBook(book);
+        library.addBook(book);
 
-        library.loanABook("Test User", "9780134685991");
-        library.loanABook("Test User", "9780134685991");
+        library.loanABook("test123", "9780134685991");
+        library.loanABook("test123", "9780134685991");
     }
 
 }
