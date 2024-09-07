@@ -209,6 +209,10 @@ Ahora al compilar el proyecto en la carpeta target se debe crear una carpeta con
 
 Explore los links del reporte en el cual le muestra que partes del código tienen prueba y cuales no.
 
+- Resultados dado por Jacoco para la clase Library que es la que se probó.
+
+![alt text](img/image-21.png)
+
 ### SONARQUBE
 Ahora es necesario hacer el análisis estático del código usando SonarQube, para lo cual necesitamos tener Docker.
 
