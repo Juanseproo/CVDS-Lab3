@@ -133,11 +133,11 @@ Por último se hizo merge entre release y main
 
 Se realizaron las pruebas pertinentes 
 
-![alt text](image.png)
+![alt text](img/image-18.png)
 
 Se implementó el método adecuadamente para que las pruebas pasaran
 
-![alt text](image-1.png)
+![alt text](img/image-17.png)
 
 ### COBERTURA (Jacoco)
 Agregar la dependencia de jacoco, utilizar la última versión disponible en maven central.
