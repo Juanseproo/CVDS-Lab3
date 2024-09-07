@@ -130,8 +130,29 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-        return null;
+        
+        if (loan == null) {
+            throw new IllegalArgumentException("Loan cannot be null.");
+        }
+    
+        if (!loans.contains(loan) || loan.getStatus() != LoanStatus.ACTIVE) {
+            throw new IllegalArgumentException("Loan does not exist or has already been returned.");
+        }
+    
+        // Encontrar y modificar el estado del préstamo
+        for (Loan l : loans) {
+            if (l.equals(loan) && l.getStatus() == LoanStatus.ACTIVE) {
+                l.setStatus(LoanStatus.RETURNED);
+                l.setReturnDate(LocalDateTime.now());
+    
+                Book book = l.getBook();
+                books.put(book, books.get(book) + 1);
+    
+                return l;
+            }
+        }
+    
+        throw new IllegalArgumentException("Loan does not exist or has already been returned.");
     }
 
     public boolean addUser(User user) {

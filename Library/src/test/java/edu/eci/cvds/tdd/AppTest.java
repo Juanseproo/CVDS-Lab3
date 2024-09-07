@@ -161,4 +161,64 @@ public class AppTest {
         library.loanABook("test123", "9780134685991");
     }
 
+    /*
+     * Probar devolver un préstamo exitoso.
+     * Verificar que el préstamo se ha modificado, el estado es RETURNED y el libro ya no está en préstamo.
+     */
+    @Test
+    public void testReturnLoanSuccessfully() {
+        Book book = new Book("Effective Java", "Juan Medina", "9780134685991");
+        library.addBook(book);
+
+        Loan loan = library.loanABook("test123", "9780134685991");
+        assertNotNull(loan);
+
+        Loan returnedLoan = library.returnLoan(loan);
+
+        assertNotNull(returnedLoan);
+        assertEquals(LoanStatus.RETURNED, returnedLoan.getStatus());
+        assertEquals(1, (int) library.getBooks().get(book));
+        assertNotNull(returnedLoan.getReturnDate());
+    }
+
+    /*
+     * Probar devolver un préstamo inexistente.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testReturnNonexistentLoan() {
+        Book book = new Book("Effective Java", "Juan Medina", "9780134685991");
+        library.addBook(book);
+        Loan nonExistentLoan = new Loan();
+        library.returnLoan(nonExistentLoan);
+    }
+
+    /*
+     * Probar devolver un préstamo con estado "RETURNED".
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testReturnLoanTwice() {
+        Book book = new Book("Effective Java", "Juan Medina", "9780134685991");
+        library.addBook(book);
+
+        Loan loan = library.loanABook("test123", "9780134685991");
+        assertNotNull(loan);
+
+        library.returnLoan(loan);
+        library.returnLoan(loan);
+    }
+
+    /*
+     * Probar devolver un préstamo para un libro que no ha sido prestado.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testReturnLoanForBookNotOnLoan() {
+        Book book = new Book("Effective Java", "Juan Medina", "9780134685991");
+        library.addBook(book);
+
+        Loan loan = new Loan();
+        loan.setBook(book);
+        loan.setUser(testUser);
+        loan.setStatus(LoanStatus.ACTIVE);
+        library.returnLoan(loan);
+    }
 }

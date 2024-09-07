@@ -4,6 +4,7 @@ import edu.eci.cvds.tdd.library.book.Book;
 import edu.eci.cvds.tdd.library.user.User;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Loan {
     private Book book;
@@ -50,5 +51,15 @@ public class Loan {
 
     public void setReturnDate(LocalDateTime returnDate) {
         this.returnDate = returnDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Loan loan = (Loan) o;
+        return Objects.equals(book, loan.book) &&
+               Objects.equals(user, loan.user) &&
+               Objects.equals(loanDate, loan.loanDate);
     }
 }
