@@ -139,6 +139,12 @@ Se implementó el método adecuadamente para que las pruebas pasaran
 
 ![alt text](img/image-17.png)
 
+### Implementación y Pruebas returnLoan
+
+Se realizaron las pruebas pertinentes
+
+![alt text](image.png)
+
 ### COBERTURA (Jacoco)
 Agregar la dependencia de jacoco, utilizar la última versión disponible en maven central.
 Para usar Jacoco es necesario agregar la siguiente sección en el pom.xml
